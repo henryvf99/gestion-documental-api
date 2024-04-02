@@ -15,12 +15,12 @@ export class SignInMiddleware implements Middleware {
         }
         req.login(user, { session: false }, async (err) => {
           if (err) return next(err);
-          const body = { id: user._id, email: user.email, nombre: user.nombre, rol: user.rol };
+          const body = { id: user.id, email: user.email, nombres: user.nombres, apellidos: user.apellidos, rol: user.rol };
 
           const token = jwt.sign({ user: body }, config.JWT_SECRET, {
             expiresIn: "3h",
           });
-          return res.json({ success: true, message: info.message, token });
+          return res.json({ success: true, message: info.message, user: body, token });
         });
       } catch (e) {
         return next(e);
