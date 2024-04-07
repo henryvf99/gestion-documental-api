@@ -4,6 +4,7 @@ import {
     GET_EMITIDOS_USE_CASE,
     DELETE_EMITIDOS_USE_CASE,
     UPDATE_EMITIDOS_USE_CASE,
+    GET_EMITIDOS_ANIO_MES_USE_CASE
   } from "@container/container";
   import { EmitidosDto } from "@core/dtos/Emitidos.dto";
   import {
@@ -11,7 +12,8 @@ import {
     DeleteEmitidosUseCase,
     GetAllEmitidosUseCase,
     GetEmitidosUseCase,
-    UpdateEmitidosUseCase
+    UpdateEmitidosUseCase,
+    GetEmitidosAnioMesUseCase
   } from "@core/use-case";
   import { Inject } from "@decorators/di";
   import {
@@ -45,7 +47,9 @@ import {
       @Inject(UPDATE_EMITIDOS_USE_CASE)
       private readonly updateEmitidosUseCase: UpdateEmitidosUseCase,
       @Inject(DELETE_EMITIDOS_USE_CASE)
-      private readonly deleteEmitidosUseCase: DeleteEmitidosUseCase
+      private readonly deleteEmitidosUseCase: DeleteEmitidosUseCase,
+      @Inject(GET_EMITIDOS_ANIO_MES_USE_CASE)
+      private readonly getEmitidosAnioMesUseCase: GetEmitidosAnioMesUseCase
     ) {}
   
     @Post("", [JwtMiddleware, ValidateEmitidosMiddleware, uploadMiddleware, attachFileToBody])
@@ -95,6 +99,18 @@ import {
     ) {
       const message = await this.deleteEmitidosUseCase.execute(id);
       res.status(200).send({ success: true, data: message });
+    }
+
+    @Get("/:tipodocumento/:anio/:mes", [JwtMiddleware])
+    async getAnioMes(
+      @Request() req: IRequest,
+      @Response() res: IResponse,
+      @Params("tipodocumento") tipodocumento: string,
+      @Params("anio") anio: string,
+      @Params("mes") mes: string
+    ) {
+      const item = await this.getEmitidosAnioMesUseCase.execute(tipodocumento, anio, mes);
+      res.json({ success: true, data: item });
     }
   
   }

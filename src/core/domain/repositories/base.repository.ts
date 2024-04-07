@@ -18,7 +18,11 @@ export class BaseRepository implements BaseOperations {
   }
 
   async getAll() {
-    return await this.model.find();
+    return await this.model.find({ status: true });
+  }
+
+  async getAllStatusFalse() {
+    return await this.model.find({ status: false });
   }
 
   async create(entity) {
@@ -35,7 +39,11 @@ export class BaseRepository implements BaseOperations {
   }
 
   async getByYearMonth(tipotrabajador: string, anio: string, mes: string){
-    return await this.model.find({ tipotrabajador, anio, mes });
+    return await this.model.find({ tipotrabajador, anio, mes, status: true });
+  }
+
+  async getPorAnioMesDoc(tipodocumento: string, anio: string, mes: string){
+    return await this.model.find({ tipodocumento, anio, mes, status: true });
   }
 
 }

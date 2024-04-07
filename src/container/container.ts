@@ -116,12 +116,14 @@ import {
   GetAllEmitidosUseCase,
   GetEmitidosUseCase,
   UpdateEmitidosUseCase,
+  GetRecibidosAnioMesUseCase,
 
   CreateRecibidosUseCase,
   DeleteRecibidosUseCase,
   GetAllRecibidosUseCase,
   GetRecibidosUseCase,
   UpdateRecibidosUseCase,
+  GetEmitidosAnioMesUseCase
 } from "@core/use-case";
 
 // Middlewares
@@ -240,6 +242,7 @@ export const DELETE_EMITIDOS_USE_CASE = new InjectionToken("DELETE_EMITIDOS_USE_
 export const GET_ALL_EMITIDOS_USE_CASE = new InjectionToken("GET_ALL_EEMITIDOSUSE_CASE");
 export const GET_EMITIDOS_USE_CASE = new InjectionToken("GET_EMITIDOS_USE_CASE");
 export const UPDATE_EMITIDOS_USE_CASE = new InjectionToken("UPDATE_EMITIDOS_USE_CASE");
+export const GET_EMITIDOS_ANIO_MES_USE_CASE = new InjectionToken("GET_EMITIDOS_ANIO_MES_USE_CASE");
 
 //RECIBIDOS
 export const CREATE_RECIBIDOS_USE_CASE = new InjectionToken("CREATE_RECIBIDOS_USE_CASE");
@@ -247,6 +250,7 @@ export const DELETE_RECIBIDOS_USE_CASE = new InjectionToken("DELETE_RECIBIDOS_US
 export const GET_ALL_RECIBIDOS_USE_CASE = new InjectionToken("GET_ALL_ERECIBIDOSUSE_CASE");
 export const GET_RECIBIDOS_USE_CASE = new InjectionToken("GET_RECIBIDOS_USE_CASE");
 export const UPDATE_RECIBIDOS_USE_CASE = new InjectionToken("UPDATE_RECIBIDOS_USE_CASE");
+export const GET_RECIBIDOS_ANIO_MES_USE_CASE = new InjectionToken("GET_RECIBIDOS_ANIO_MES_USE_CASE");
 
 // Repository
 export const USER_REPOSITORY = new InjectionToken("USER_REPOSITORY");
@@ -368,12 +372,14 @@ Container.provide([
   { provide: GET_ALL_EMITIDOS_USE_CASE, useClass: GetAllEmitidosUseCase },
   { provide: GET_EMITIDOS_USE_CASE, useClass: GetEmitidosUseCase },
   { provide: UPDATE_EMITIDOS_USE_CASE, useClass: UpdateEmitidosUseCase },
+  { provide: GET_EMITIDOS_ANIO_MES_USE_CASE, useClass: GetEmitidosAnioMesUseCase },
 
   { provide: CREATE_RECIBIDOS_USE_CASE, useClass: CreateRecibidosUseCase },
   { provide: DELETE_RECIBIDOS_USE_CASE, useClass: DeleteRecibidosUseCase },
   { provide: GET_ALL_RECIBIDOS_USE_CASE, useClass: GetAllRecibidosUseCase },
   { provide: GET_RECIBIDOS_USE_CASE, useClass: GetRecibidosUseCase },
   { provide: UPDATE_RECIBIDOS_USE_CASE, useClass: UpdateRecibidosUseCase },
+  { provide: GET_RECIBIDOS_ANIO_MES_USE_CASE, useClass: GetRecibidosAnioMesUseCase },
 
   { provide: USER_REPOSITORY, useClass: UserRepository },
   { provide: ROL_REPOSITORY, useClass: RolRepository },

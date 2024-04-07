@@ -91,6 +91,7 @@ export * from "./recibidos/delete-recibidos";
 export * from "./recibidos/get-all-recibidos";
 export * from "./recibidos/get-recibidos";
 export * from "./recibidos/update-recibidos";
+export * from "./recibidos/get-recibidos-anio-mes";
 
 //emitidos
 export * from "./emitidos/create-emitidos";
@@ -98,3 +99,4 @@ export * from "./emitidos/delete-emitidos";
 export * from "./emitidos/get-all-emitidos";
 export * from "./emitidos/get-emitidos";
 export * from "./emitidos/update-emitidos";
+export * from "./emitidos/get-emitidos-anio-mes";

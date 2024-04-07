@@ -20,7 +20,7 @@ export class GetPlanillaAnioMesUseCase implements UseCase<any, any, any, any[]>{
 
     const data_tipotrabajador = await this.tipotrabajadorRepository.get(tipotrabajador);
     if (!data_tipotrabajador) {
-      throw new Error(`El tipo de trabajador con el id: ${anio} no se encuentra.`);
+      throw new Error(`El tipo de trabajador con el id: ${tipotrabajador} no se encuentra.`);
     }
     
     const data_anio = await this.anioRepository.get(anio);
