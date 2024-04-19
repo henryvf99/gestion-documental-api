@@ -12,6 +12,7 @@ interface RecibidosAttrs {
     codigo: string;
     asunto: string;
     fecharecepcion: string;
+    nombrearchivo: string;
     file: Buffer;
     status: boolean;
 }
@@ -23,6 +24,7 @@ export interface RecibidosDoc extends mongoose.Document {
     codigo: string;
     asunto: string;
     fecharecepcion: string;
+    nombrearchivo: string;
     file: Buffer;
     status: boolean;
 }
@@ -63,6 +65,10 @@ const recibidosSchema = new Schema(
     fecharecepcion: {
         type: String,
         required: [true, "El fecharecepcion es requerido."]
+    },
+    nombrearchivo: {
+      type: String,
+      required: true
     },
     file: {
         type: Buffer,

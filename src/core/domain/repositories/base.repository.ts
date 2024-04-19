@@ -38,6 +38,14 @@ export class BaseRepository implements BaseOperations {
     return true;
   }
 
+  async getByTipoTrabajador(tipotrabajador: string){
+    return await this.model.find({ tipotrabajador, status: true });
+  }
+
+  async getByTipoDocumento(tipodocumento: string){
+    return await this.model.find({ tipodocumento, status: true });
+  }
+
   async getByYearMonth(tipotrabajador: string, anio: string, mes: string){
     return await this.model.find({ tipotrabajador, anio, mes, status: true });
   }

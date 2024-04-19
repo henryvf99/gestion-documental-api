@@ -4,7 +4,8 @@ import {
     GET_BOLETA_USE_CASE,
     DELETE_BOLETA_USE_CASE,
     UPDATE_BOLETA_USE_CASE,
-    GET_BOLETA_ANIO_MES_USE_CASE
+    GET_BOLETA_ANIO_MES_USE_CASE,
+    GET_BOLETA_TIPOTRABAJADOR_USE_CASE
   } from "@container/container";
   import { BoletaDto } from "@core/dtos/Boleta.dto";
   import {
@@ -13,7 +14,8 @@ import {
     GetAllBoletaUseCase,
     GetBoletaUseCase,
     UpdateBoletaUseCase,
-    GetBoletaAnioMesUseCase
+    GetBoletaAnioMesUseCase,
+    GetBoletaTipotrabajadorUseCase
   } from "@core/use-case";
   import { Inject } from "@decorators/di";
   import {
@@ -49,7 +51,9 @@ import {
       @Inject(DELETE_BOLETA_USE_CASE)
       private readonly deleteBoletaUseCase: DeleteBoletaUseCase,
       @Inject(GET_BOLETA_ANIO_MES_USE_CASE)
-      private readonly getBoletaAnioMesUseCase: GetBoletaAnioMesUseCase
+      private readonly getBoletaAnioMesUseCase: GetBoletaAnioMesUseCase,
+      @Inject(GET_BOLETA_TIPOTRABAJADOR_USE_CASE)
+      private readonly getBoletaTipotrabajadorUseCase: GetBoletaTipotrabajadorUseCase
     ) {}
   
     @Post("", [JwtMiddleware, ValidateBoletaMiddleware, uploadMiddleware, attachFileToBody])
@@ -110,6 +114,16 @@ import {
       @Params("mes") mes: string
     ) {
       const item = await this.getBoletaAnioMesUseCase.execute(tipotrabajador, anio, mes);
+      res.json({ success: true, data: item });
+    }
+
+    @Get("/tipotrabajador/:idtipotrabajador", [JwtMiddleware])
+    async getTipoTrabajador(
+      @Request() req: IRequest,
+      @Response() res: IResponse,
+      @Params("idtipotrabajador") tipotrabajador: string
+    ) {
+      const item = await this.getBoletaTipotrabajadorUseCase.execute(tipotrabajador);
       res.json({ success: true, data: item });
     }
   

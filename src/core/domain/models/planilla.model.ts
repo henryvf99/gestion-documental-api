@@ -10,6 +10,7 @@ interface PlanillaAttrs {
     tipotrabajador: TipotrabajadorDoc;
     regimen: string;
     observacion: string;
+    nombrearchivo: string;
     file: Buffer;
     status: boolean;
 }
@@ -20,6 +21,7 @@ export interface PlanillaDoc extends mongoose.Document {
     tipotrabajador: TipotrabajadorDoc;
     regimen: string;
     observacion: string;
+    nombrearchivo: string;
     file: Buffer;
     status: boolean;
 }
@@ -55,6 +57,10 @@ const planillaSchema = new Schema(
     observacion: {
         type: String,
         required: false
+    },
+    nombrearchivo: {
+      type: String,
+      required: true
     },
     file: {
         type: Buffer,

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import mongoose_autopopulate from "mongoose-autopopulate";
 import uniqueValidator from "mongoose-unique-validator";
-import { AnioDoc, MesDoc, TipotrabajadorDoc } from '@core/domain/models';
+import { AnioDoc, MesDoc, TipotrabajadorDoc, TrabajadorDoc } from '@core/domain/models';
 
 const { Schema } = mongoose;
 
@@ -9,8 +9,10 @@ interface BoletaAttrs {
     anio: AnioDoc;
     mes: MesDoc;
     tipotrabajador: TipotrabajadorDoc;
+    trabajador: TrabajadorDoc;
     regimen: string;
     observacion: string;
+    nombrearchivo: string;
     file: Buffer;
     status: boolean;
 }
@@ -19,8 +21,10 @@ export interface BoletaDoc extends mongoose.Document {
     anio: AnioDoc;
     mes: MesDoc;
     tipotrabajador: TipotrabajadorDoc;
+    trabajador: TrabajadorDoc;
     regimen: string;
     observacion: string;
+    nombrearchivo: string;
     file: Buffer;
     status: boolean;
 }
@@ -49,6 +53,12 @@ const boletaSchema = new Schema(
       autopopulate: true,
       required: [true, "El tipotrabajador es requerido."]
     },
+    trabajador: {
+      type: mongoose.Types.ObjectId,
+      ref: "trabajador",
+      autopopulate: true,
+      required: [true, "El trabajador es requerido."]
+    },
     regimen: {
       type: String,
       required: false
@@ -56,6 +66,10 @@ const boletaSchema = new Schema(
     observacion: {
         type: String,
         required: false
+    },
+    nombrearchivo: {
+      type: String,
+      required: true
     },
     file: {
         type: Buffer,

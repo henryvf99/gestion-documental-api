@@ -13,7 +13,9 @@ interface EmitidosAttrs {
     destinatario: string;
     asunto: string;
     fechaemision: string;
+    nombrearchivo: string;
     file: Buffer;
+    nombrearchivo2: string;
     file2: Buffer;
     status: boolean;
 }
@@ -26,7 +28,9 @@ export interface EmitidosDoc extends mongoose.Document {
     destinatario: string;
     asunto: string;
     fechaemision: string;
+    nombrearchivo: string;
     file: Buffer;
+    nombrearchivo2: string;
     file2: Buffer;
     status: boolean;
 }
@@ -72,9 +76,17 @@ const emitidosSchema = new Schema(
         type: String,
         required: [true, "El fechaemision es requerido."]
     },
+    nombrearchivo: {
+      type: String,
+      required: false
+    },
     file: {
         type: Buffer,
         required: false
+    },
+    nombrearchivo2: {
+      type: String,
+      required: true
     },
     file2: {
         type: Buffer,

@@ -4,7 +4,8 @@ import {
     GET_PLANILLA_USE_CASE,
     DELETE_PLANILLA_USE_CASE,
     UPDATE_PLANILLA_USE_CASE,
-    GET_PLANILLA_ANIO_MES_USE_CASE
+    GET_PLANILLA_ANIO_MES_USE_CASE,
+    GET_PLANILLA_TIPOTRABAJADOR_USE_CASE
   } from "@container/container";
   import { PlanillaDto } from "@core/dtos/Planilla.dto";
   import {
@@ -13,7 +14,8 @@ import {
     GetAllPlanillaUseCase,
     GetPlanillaUseCase,
     UpdatePlanillaUseCase,
-    GetPlanillaAnioMesUseCase
+    GetPlanillaAnioMesUseCase,
+    GetPlanillaTipotrabajadorUseCase
   } from "@core/use-case";
   import { Inject } from "@decorators/di";
   import {
@@ -49,7 +51,9 @@ import {
       @Inject(DELETE_PLANILLA_USE_CASE)
       private readonly deletePlanillaUseCase: DeletePlanillaUseCase,
       @Inject(GET_PLANILLA_ANIO_MES_USE_CASE)
-      private readonly getPlanillaAnioMesUseCase: GetPlanillaAnioMesUseCase
+      private readonly getPlanillaAnioMesUseCase: GetPlanillaAnioMesUseCase,
+      @Inject(GET_PLANILLA_TIPOTRABAJADOR_USE_CASE)
+      private readonly getPlanillaTipotrabajadorUseCase: GetPlanillaTipotrabajadorUseCase
     ) {}
   
     @Post("", [JwtMiddleware, ValidatePlanillaMiddleware, uploadMiddleware, attachFileToBody])
@@ -110,6 +114,16 @@ import {
       @Params("mes") mes: string
     ) {
       const item = await this.getPlanillaAnioMesUseCase.execute(tipotrabajador, anio, mes);
+      res.json({ success: true, data: item });
+    }
+
+    @Get("/tipotrabajador/:idtipotrabajador", [JwtMiddleware])
+    async getTipoTrabajador(
+      @Request() req: IRequest,
+      @Response() res: IResponse,
+      @Params("idtipotrabajador") tipotrabajador: string
+    ) {
+      const item = await this.getPlanillaTipotrabajadorUseCase.execute(tipotrabajador);
       res.json({ success: true, data: item });
     }
   

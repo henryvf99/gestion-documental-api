@@ -34,6 +34,7 @@ export * from "./boleta/get-all-boleta";
 export * from "./boleta/get-boleta";
 export * from "./boleta/update-boleta";
 export * from "./boleta/get-boleta-anio-mes";
+export * from "./boleta/get-boleta-tipotrabajador";
 
 //cargo
 export * from "./cargo/create-cargo";
@@ -56,6 +57,7 @@ export * from "./planilla/get-all-planilla";
 export * from "./planilla/get-planilla";
 export * from "./planilla/update-planilla";
 export * from "./planilla/get-planilla-anio-mes";
+export * from "./planilla/get-planilla-tipotrabajador";
 
 //tipodocumento
 export * from "./tipodocumento/create-tipodocumento";
@@ -77,6 +79,7 @@ export * from "./trabajador/delete-trabajador";
 export * from "./trabajador/get-all-trabajador";
 export * from "./trabajador/get-trabajador";
 export * from "./trabajador/update-trabajador";
+export * from "./trabajador/get-trabajador-tipotrabajador";
 
 //practicantes
 export * from "./practicantes/create-practicantes";
@@ -92,6 +95,7 @@ export * from "./recibidos/get-all-recibidos";
 export * from "./recibidos/get-recibidos";
 export * from "./recibidos/update-recibidos";
 export * from "./recibidos/get-recibidos-anio-mes";
+export * from "./recibidos/get-recibidos-tipodocumento";
 
 //emitidos
 export * from "./emitidos/create-emitidos";
@@ -100,3 +104,4 @@ export * from "./emitidos/get-all-emitidos";
 export * from "./emitidos/get-emitidos";
 export * from "./emitidos/update-emitidos";
 export * from "./emitidos/get-emitidos-anio-mes";
+export * from "./emitidos/get-emitidos-tipodocumento";

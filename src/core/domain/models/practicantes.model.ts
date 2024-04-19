@@ -14,7 +14,9 @@ interface PracticantesAttrs {
     carrera: string;
     fingreso: string;
     fsalida: string;
+    nombrearchivo: string;
     file: Buffer;
+    nombrearchivo2: string;
     file2: Buffer;
     status: boolean;
 }
@@ -28,7 +30,9 @@ export interface PracticantesDoc extends mongoose.Document {
     carrera: string;
     fingreso: string;
     fsalida: string;
+    nombrearchivo: string;
     file: Buffer;
+    nombrearchivo2: string;
     file2: Buffer;
     status: boolean;
 }
@@ -73,9 +77,17 @@ const practicantesSchema = new Schema(
         type: String,
         required: false
     },
+    nombrearchivo: {
+      type: String,
+      required: false
+    },
     file: {
         type: Buffer,
-        required: [true, "El campo file de ingreso es requerido."]
+        required: false
+    },
+    nombrearchivo2: {
+      type: String,
+      required: false
     },
     file2: {
         type: Buffer,

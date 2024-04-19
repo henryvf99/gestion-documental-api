@@ -4,6 +4,7 @@ import {
     GET_TRABAJADOR_USE_CASE,
     DELETE_TRABAJADOR_USE_CASE,
     UPDATE_TRABAJADOR_USE_CASE,
+    GET_TRABAJADOR_TIPOTRABAJADOR_USE_CASE
   } from "@container/container";
   import { TrabajadorDto } from "@core/dtos/trabajador.dto";
   import {
@@ -11,7 +12,8 @@ import {
     DeleteTrabajadorUseCase,
     GetAllTrabajadorUseCase,
     GetTrabajadorUseCase,
-    UpdateTrabajadorUseCase
+    UpdateTrabajadorUseCase,
+    GetTrabajadorTipotrabajadorUseCase
   } from "@core/use-case";
   import { Inject } from "@decorators/di";
   import {
@@ -44,7 +46,9 @@ import {
       @Inject(UPDATE_TRABAJADOR_USE_CASE)
       private readonly updateTrabajadorUseCase: UpdateTrabajadorUseCase,
       @Inject(DELETE_TRABAJADOR_USE_CASE)
-      private readonly deleteTrabajadorUseCase: DeleteTrabajadorUseCase
+      private readonly deleteTrabajadorUseCase: DeleteTrabajadorUseCase,
+      @Inject(GET_TRABAJADOR_TIPOTRABAJADOR_USE_CASE)
+      private readonly getTrabajadorTipotrabajadorUseCase: GetTrabajadorTipotrabajadorUseCase
     ) {}
   
     @Post("", [JwtMiddleware, ValidateTrabajadorMiddleware])
@@ -94,6 +98,16 @@ import {
     ) {
       const message = await this.deleteTrabajadorUseCase.execute(id);
       res.status(200).send({ success: true, data: message });
+    }
+
+    @Get("/tipotrabajador/:idtipotrabajador", [JwtMiddleware])
+    async getTipoTrabajador(
+      @Request() req: IRequest,
+      @Response() res: IResponse,
+      @Params("idtipotrabajador") tipotrabajador: string
+    ) {
+      const item = await this.getTrabajadorTipotrabajadorUseCase.execute(tipotrabajador);
+      res.json({ success: true, data: item });
     }
   
   }
