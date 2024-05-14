@@ -84,7 +84,6 @@ const recibidosSchema = new Schema(
       transform(doc, ret) {
         ret.id = ret._id;
         delete ret._id;
-        delete ret.file;
         delete ret.__v;
       },
     },
