@@ -8,7 +8,7 @@ import { TipotrabajadorDoc } from './tipotrabajador.model';
 const { Schema } = mongoose;
 
 interface TrabajadorAttrs {
-  tipo: TipotrabajadorDoc;
+  tipotrabajador: TipotrabajadorDoc;
   regimen: string;
   nombres: string;
   apellidos: string;
@@ -22,7 +22,7 @@ interface TrabajadorAttrs {
 }
 
 export interface TrabajadorDoc extends mongoose.Document {
-  tipo: TipotrabajadorDoc;
+  tipotrabajador: TipotrabajadorDoc;
   regimen: string;
   nombres: string;
   apellidos: string;
@@ -41,7 +41,7 @@ interface TrabajadorModel extends mongoose.Model<TrabajadorDoc> {
 
 const trabajadorSchema = new Schema(
   {
-    tipo: {
+    tipotrabajador: {
       type: mongoose.Types.ObjectId,
       ref: "tipotrabajador",
       autopopulate: true,
