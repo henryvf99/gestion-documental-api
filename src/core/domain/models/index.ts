@@ -12,3 +12,4 @@ export * from "./trabajador.model";
 export * from "./practicantes.model";
 export * from "./emitidos.model";
 export * from "./recibidos.model";
+export * from "./permisos.model";

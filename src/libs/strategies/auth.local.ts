@@ -12,9 +12,9 @@ passport.use(
       passReqToCallback: true,
     },
     async (req, email, password, done) => {
-      const { nombres, apellidos, area, rol } = req.body;
+      const { nombres, apellidos, area, rol, permisos } = req.body;
       try {
-        const user = await User.create({ email, password, nombres, apellidos, area, rol });
+        const user = await User.create({ email, password, nombres, apellidos, area, rol, permisos });
         return done(null, user);
       } catch (e) {
         done(e);

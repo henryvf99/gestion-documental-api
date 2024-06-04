@@ -14,3 +14,4 @@ export * from "./trabajador.controller";
 export * from "./practicantes.controller";
 export * from "./emitidos.controller";
 export * from "./recibidos.controller";
+export * from "./permisos.controller";

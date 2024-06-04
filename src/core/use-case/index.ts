@@ -105,3 +105,10 @@ export * from "./emitidos/get-emitidos";
 export * from "./emitidos/update-emitidos";
 export * from "./emitidos/get-emitidos-anio-mes";
 export * from "./emitidos/get-emitidos-tipodocumento";
+
+//permisos
+export * from "./permisos/create-permisos";
+export * from "./permisos/delete-permisos";
+export * from "./permisos/get-all-permisos";
+export * from "./permisos/get-permisos";
+export * from "./permisos/update-permisos";

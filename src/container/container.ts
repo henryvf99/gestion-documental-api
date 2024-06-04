@@ -18,7 +18,8 @@ import {
   ValidateTrabajadorMiddleware,
   ValidateEmitidosMiddleware,
   ValidatePracticantesMiddleware,
-  ValidateRecibidosMiddleware
+  ValidateRecibidosMiddleware,
+  ValidatePermisosMiddleware
 } from "@infrastructure/middlewares";
 import { ERROR_MIDDLEWARE } from "@decorators/express";
 import { 
@@ -35,7 +36,8 @@ import {
   TrabajadorRepository,
   RecibidosRepository,
   EmitidosRepository,
-  PracticantesRepository
+  PracticantesRepository,
+  PermisosRepository
  } from "@core/domain/repositories";
 import {
   HelloWorld,
@@ -131,7 +133,13 @@ import {
   GetRecibidosUseCase,
   UpdateRecibidosUseCase,
   GetRecibidosAnioMesUseCase,
-  GetRecibidosTipodocumentoUseCase
+  GetRecibidosTipodocumentoUseCase,
+
+  CreatePermisosUseCase,
+  DeletePermisosUseCase,
+  GetAllPermisosUseCase,
+  GetPermisosUseCase,
+  UpdatePermisosUseCase,
   
 } from "@core/use-case";
 
@@ -155,6 +163,7 @@ export const VALIDATE_TRABAJADOR_MIDDLEWARE = new InjectionToken("VALIDATE_TRABA
 export const VALIDATE_PRACTICANTES_MIDDLEWARE = new InjectionToken("VALIDATE_PRACTICANTES_MIDDLEWARE");
 export const VALIDATE_EMITIDOS_MIDDLEWARE = new InjectionToken("VALIDATE_EMITIDOS_MIDDLEWARE");
 export const VALIDATE_RECIBIDOS_MIDDLEWARE = new InjectionToken("VALIDATE_RECIBIDOS_MIDDLEWARE");
+export const VALIDATE_PERMISOS_MIDDLEWARE = new InjectionToken("VALIDATE_PERMISOS_MIDDLEWARE");
 
 // USE CASE
 export const HELLO_USE_CASE = new InjectionToken("HELLO_USE_CASE");
@@ -266,6 +275,13 @@ export const UPDATE_RECIBIDOS_USE_CASE = new InjectionToken("UPDATE_RECIBIDOS_US
 export const GET_RECIBIDOS_ANIO_MES_USE_CASE = new InjectionToken("GET_RECIBIDOS_ANIO_MES_USE_CASE");
 export const GET_RECIBIDOS_TIPODOCUMENTO_USE_CASE = new InjectionToken("GET_RECIBIDOS_TIPODOCUMENTO_USE_CASE");
 
+//PERMISOS
+export const CREATE_PERMISOS_USE_CASE = new InjectionToken("CREATE_PERMISOS_USE_CASE");
+export const DELETE_PERMISOS_USE_CASE = new InjectionToken("DELETE_PERMISOS_USE_CASE");
+export const GET_ALL_PERMISOS_USE_CASE = new InjectionToken("GET_ALL_EPERMISOSUSE_CASE");
+export const GET_PERMISOS_USE_CASE = new InjectionToken("GET_PERMISOS_USE_CASE");
+export const UPDATE_PERMISOS_USE_CASE = new InjectionToken("UPDATE_PERMISOS_USE_CASE");
+
 // Repository
 export const USER_REPOSITORY = new InjectionToken("USER_REPOSITORY");
 export const ROL_REPOSITORY = new InjectionToken("ROL_REPOSITORY");
@@ -281,6 +297,7 @@ export const TRABAJADOR_REPOSITORY = new InjectionToken("TRABAJADOR_REPOSITORY")
 export const PRACTICANTES_REPOSITORY = new InjectionToken("PRACTICANTES_REPOSITORY");
 export const EMITIDOS_REPOSITORY = new InjectionToken("EMITIDOS_REPOSITORY");
 export const RECIBIDOS_REPOSITORY = new InjectionToken("RECIBIDOS_REPOSITORY");
+export const PERMISOS_REPOSITORY = new InjectionToken("PERMISOS_REPOSITORY");
 
 // Container of dependency
 Container.provide([
@@ -304,6 +321,7 @@ Container.provide([
   { provide: VALIDATE_PRACTICANTES_MIDDLEWARE, useClass: ValidatePracticantesMiddleware },
   { provide: VALIDATE_EMITIDOS_MIDDLEWARE, useClass: ValidateEmitidosMiddleware },
   { provide: VALIDATE_RECIBIDOS_MIDDLEWARE, useClass: ValidateRecibidosMiddleware },
+  { provide: VALIDATE_PERMISOS_MIDDLEWARE, useClass: ValidatePermisosMiddleware },
 
   { provide: HELLO_USE_CASE, useClass: HelloWorld },
 
@@ -400,6 +418,12 @@ Container.provide([
   { provide: GET_RECIBIDOS_ANIO_MES_USE_CASE, useClass: GetRecibidosAnioMesUseCase },
   { provide: GET_RECIBIDOS_TIPODOCUMENTO_USE_CASE, useClass: GetRecibidosTipodocumentoUseCase },
 
+  { provide: CREATE_PERMISOS_USE_CASE, useClass: CreatePermisosUseCase },
+  { provide: DELETE_PERMISOS_USE_CASE, useClass: DeletePermisosUseCase },
+  { provide: GET_ALL_PERMISOS_USE_CASE, useClass: GetAllPermisosUseCase },
+  { provide: GET_PERMISOS_USE_CASE, useClass: GetPermisosUseCase },
+  { provide: UPDATE_PERMISOS_USE_CASE, useClass: UpdatePermisosUseCase },
+
   { provide: USER_REPOSITORY, useClass: UserRepository },
   { provide: ROL_REPOSITORY, useClass: RolRepository },
   { provide: ANIO_REPOSITORY, useClass: AnioRepository },
@@ -413,5 +437,6 @@ Container.provide([
   { provide: TRABAJADOR_REPOSITORY, useClass: TrabajadorRepository },
   { provide: PRACTICANTES_REPOSITORY, useClass: PracticantesRepository },
   { provide: EMITIDOS_REPOSITORY, useClass: EmitidosRepository },
-  { provide: RECIBIDOS_REPOSITORY, useClass: RecibidosRepository }
+  { provide: RECIBIDOS_REPOSITORY, useClass: RecibidosRepository },
+  { provide: PERMISOS_REPOSITORY, useClass: PermisosRepository }
 ]);

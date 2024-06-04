@@ -13,3 +13,4 @@ export * from "./trabajador.repository";
 export * from "./practicantes.repository";
 export * from "./emitidos.repository";
 export * from "./recibidos.repository";
+export * from "./permisos.repository";

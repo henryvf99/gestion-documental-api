@@ -14,7 +14,8 @@ import {
   TrabajadorController,
   PracticantesController,
   EmitidosController,
-  RecibidosController
+  RecibidosController,
+  PermisosController
 } from "@app/controllers";
 import { attachControllers } from "@decorators/express";
 import express from "express";
@@ -41,7 +42,8 @@ class Routes {
       TrabajadorController,
       PracticantesController,
       EmitidosController,
-      RecibidosController
+      RecibidosController,
+      PermisosController
     ]);
     return this.apiRouter;
   }

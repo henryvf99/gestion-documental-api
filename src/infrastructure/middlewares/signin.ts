@@ -15,7 +15,7 @@ export class SignInMiddleware implements Middleware {
         }
         req.login(user, { session: false }, async (err) => {
           if (err) return next(err);
-          const body = { id: user.id, email: user.email, nombres: user.nombres, apellidos: user.apellidos, rol: user.rol };
+          const body = { id: user.id, email: user.email, nombres: user.nombres, apellidos: user.apellidos, area: user.area, rol: user.rol, permisos: user.permisos };
 
           const token = jwt.sign({ user: body }, config.JWT_SECRET, {
             expiresIn: "3h",

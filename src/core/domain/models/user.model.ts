@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import mongoose_autopopulate from "mongoose-autopopulate";
 import uniqueValidator from "mongoose-unique-validator";
 import bcrypt from "bcrypt";
-import { AreaDoc, RolDoc } from '@core/domain/models';
+import { AreaDoc, RolDoc, PermisoDoc } from '@core/domain/models';
 const { Schema } = mongoose;
 
 interface UserAttrs {
@@ -12,6 +12,7 @@ interface UserAttrs {
   apellidos: string;
   area: AreaDoc;
   rol: RolDoc;
+  permisos: PermisoDoc;
 }
 
 export interface UserDoc extends mongoose.Document {
@@ -21,6 +22,7 @@ export interface UserDoc extends mongoose.Document {
   apellidos: string;
   area: AreaDoc;
   rol: RolDoc;
+  permisos: PermisoDoc;
   isValidPassword: (password: string) => Promise<any>;
 }
 
@@ -58,6 +60,12 @@ const userSchema = new Schema(
       ref: "rol",
       autopopulate: true,
       required: [true, "The role is required."]
+    },
+    permisos: {
+      type: mongoose.Types.ObjectId,
+      ref: "permiso",
+      autopopulate: true,
+      required: [true, "The permiso is required."]
     }
   },
   {
