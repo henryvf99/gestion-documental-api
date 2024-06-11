@@ -5,7 +5,7 @@ import {
     DELETE_PRACTICANTES_USE_CASE,
     UPDATE_PRACTICANTES_USE_CASE,
   } from "@container/container";
-  import { PracticantesDto } from "@core/dtos/Practicantes.dto";
+  import { PracticantesDto } from "../../core/dtos/practicantes.dto";
   import {
     CreatePracticantesUseCase,
     DeletePracticantesUseCase,

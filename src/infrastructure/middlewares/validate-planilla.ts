@@ -1,4 +1,4 @@
-import { PlanillaDto } from "@core/dtos/planilla.dto";
+import { PlanillaDto } from "../../core/dtos/planilla.dto";
 import { Injectable } from "@decorators/di";
 import { Middleware } from "@decorators/express";
 import { plainToClass } from "class-transformer";

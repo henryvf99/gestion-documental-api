@@ -1,4 +1,4 @@
-import { TipodocumentoDto } from "@core/dtos/tipodocumento.dto";
+import { TipodocumentoDto } from "../../core/dtos/tipodocumento.dto";
 import { Injectable } from "@decorators/di";
 import { Middleware } from "@decorators/express";
 import { plainToClass } from "class-transformer";

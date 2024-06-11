@@ -5,7 +5,7 @@ import {
     DELETE_ROL_USE_CASE,
     UPDATE_ROL_USE_CASE,
   } from "@container/container";
-  import { RolDto } from "@core/dtos/Rol.dto";
+  import { RolDto } from "../../core/dtos/rol.dto";
   import {
     CreateRolUseCase,
     DeleteRolUseCase,

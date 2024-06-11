@@ -5,7 +5,7 @@ import {
     DELETE_TIPOTRABAJADOR_USE_CASE,
     UPDATE_TIPOTRABAJADOR_USE_CASE,
   } from "@container/container";
-  import { TipotrabajadorDto } from "@core/dtos/Tipotrabajador.dto";
+  import { TipotrabajadorDto } from "../../core/dtos/tipotrabajador.dto";
   import {
     CreateTipotrabajadorUseCase,
     DeleteTipotrabajadorUseCase,

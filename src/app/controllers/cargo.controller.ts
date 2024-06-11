@@ -5,7 +5,7 @@ import {
     DELETE_CARGO_USE_CASE,
     UPDATE_CARGO_USE_CASE,
   } from "@container/container";
-  import { CargoDto } from "@core/dtos/Cargo.dto";
+  import { CargoDto } from "../../core/dtos/cargo.dto";
   import {
     CreateCargoUseCase,
     DeleteCargoUseCase,

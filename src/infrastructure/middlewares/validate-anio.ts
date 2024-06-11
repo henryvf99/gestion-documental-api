@@ -1,4 +1,4 @@
-import { AnioDto } from "@core/dtos/anio.dto";
+import { AnioDto } from "../../core/dtos/anio.dto";
 import { Injectable } from "@decorators/di";
 import { Middleware } from "@decorators/express";
 import { plainToClass } from "class-transformer";

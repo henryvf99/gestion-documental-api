@@ -1,4 +1,4 @@
-import { RecibidosDto } from "@core/dtos/recibidos.dto";
+import { RecibidosDto } from "../../core/dtos/recibidos.dto";
 import { Injectable } from "@decorators/di";
 import { Middleware } from "@decorators/express";
 import { plainToClass } from "class-transformer";

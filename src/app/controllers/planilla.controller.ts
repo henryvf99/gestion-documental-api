@@ -7,7 +7,7 @@ import {
     GET_PLANILLA_ANIO_MES_USE_CASE,
     GET_PLANILLA_TIPOTRABAJADOR_USE_CASE
   } from "@container/container";
-  import { PlanillaDto } from "@core/dtos/Planilla.dto";
+  import { PlanillaDto } from "../../core/dtos/planilla.dto";
   import {
     CreatePlanillaUseCase,
     DeletePlanillaUseCase,

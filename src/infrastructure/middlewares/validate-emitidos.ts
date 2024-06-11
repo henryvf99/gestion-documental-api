@@ -1,4 +1,4 @@
-import { EmitidosDto } from "@core/dtos/emitidos.dto";
+import { EmitidosDto } from "../../core/dtos/emitidos.dto";
 import { Injectable } from "@decorators/di";
 import { Middleware } from "@decorators/express";
 import { plainToClass } from "class-transformer";

@@ -1,4 +1,4 @@
-import { RolDto } from "@core/dtos/Rol.dto";
+import { RolDto } from "../../core/dtos/rol.dto";
 import { Injectable } from "@decorators/di";
 import { Middleware } from "@decorators/express";
 import { plainToClass } from "class-transformer";

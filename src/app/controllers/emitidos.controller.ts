@@ -7,7 +7,7 @@ import {
     GET_EMITIDOS_ANIO_MES_USE_CASE,
     GET_EMITIDOS_TIPODOCUMENTO_USE_CASE
   } from "@container/container";
-  import { EmitidosDto } from "@core/dtos/Emitidos.dto";
+  import { EmitidosDto } from "../../core/dtos/emitidos.dto";
   import {
     CreateEmitidosUseCase,
     DeleteEmitidosUseCase,

@@ -1,4 +1,4 @@
-import { CargoDto } from "@core/dtos/cargo.dto";
+import { CargoDto } from "../../core/dtos/cargo.dto";
 import { Injectable } from "@decorators/di";
 import { Middleware } from "@decorators/express";
 import { plainToClass } from "class-transformer";

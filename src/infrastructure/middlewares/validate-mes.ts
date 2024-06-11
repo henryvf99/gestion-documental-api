@@ -1,4 +1,4 @@
-import { MesDto } from "@core/dtos/mes.dto";
+import { MesDto } from "../../core/dtos/mes.dto";
 import { Injectable } from "@decorators/di";
 import { Middleware } from "@decorators/express";
 import { plainToClass } from "class-transformer";

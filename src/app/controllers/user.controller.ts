@@ -5,7 +5,7 @@ import {
   DELETE_USER_USE_CASE,
   UPDATE_USER_USE_CASE,
 } from "@container/container";
-import { UserDto } from "@core/dtos/user.dto";
+import { UserDto } from "../../core/dtos/user.dto";
 import {
   CreateUserUseCase,
   GetAllUserUseCase,

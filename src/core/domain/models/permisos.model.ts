@@ -6,26 +6,34 @@ const { Schema } = mongoose;
 
 interface PermisoAttrs {
   nombre: string;
+  
   gtrabajador: boolean;
   ptrabajador: boolean;
   utrabajador: boolean;
   dtrabajador: boolean;
+
   gpracticante: boolean;
   ppracticante: boolean;
   upracticante: boolean;
   dpracticante: boolean;
+
   gboleta: boolean;
   pboleta: boolean;
   uboleta: boolean;
   dboleta: boolean;
+
   gplanilla: boolean;
   pplanilla: boolean;
   uplanilla: boolean;
   dplanilla: boolean;
+
+  semitidos: boolean;
   gemitidos: boolean;
   pemitidos: boolean;
   uemitidos: boolean;
   demitidos: boolean;
+  
+  srecibidos: boolean;
   grecibidos: boolean;
   precibidos: boolean;
   urecibidos: boolean;
@@ -35,26 +43,34 @@ interface PermisoAttrs {
 
 export interface PermisoDoc extends mongoose.Document {
   nombre: string;
+
   gtrabajador: boolean;
   ptrabajador: boolean;
   utrabajador: boolean;
   dtrabajador: boolean;
+
   gpracticante: boolean;
   ppracticante: boolean;
   upracticante: boolean;
   dpracticante: boolean;
+
   gboleta: boolean;
   pboleta: boolean;
   uboleta: boolean;
   dboleta: boolean;
+
   gplanilla: boolean;
   pplanilla: boolean;
   uplanilla: boolean;
   dplanilla: boolean;
+
+  semitidos: boolean;
   gemitidos: boolean;
   pemitidos: boolean;
   uemitidos: boolean;
   demitidos: boolean;
+
+  srecibidos: boolean;
   grecibidos: boolean;
   precibidos: boolean;
   urecibidos: boolean;
@@ -136,6 +152,10 @@ const permisoSchema = new Schema(
       type: Boolean,
       default: false
     },
+    semitidos: {
+      type: Boolean,
+      default: false
+    },
     gemitidos: {
       type: Boolean,
       default: false
@@ -149,6 +169,10 @@ const permisoSchema = new Schema(
       default: false
     },
     demitidos: {
+      type: Boolean,
+      default: false
+    },
+    srecibidos: {
       type: Boolean,
       default: false
     },

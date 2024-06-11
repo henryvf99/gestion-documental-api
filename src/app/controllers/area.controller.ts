@@ -5,7 +5,7 @@ import {
     DELETE_AREA_USE_CASE,
     UPDATE_AREA_USE_CASE,
   } from "@container/container";
-  import { AreaDto } from "@core/dtos/Area.dto";
+  import { AreaDto } from "../../core/dtos/area.dto";
   import {
     CreateAreaUseCase,
     DeleteAreaUseCase,

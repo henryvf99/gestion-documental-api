@@ -1,4 +1,4 @@
-import { UserDto } from "@core/dtos/User.dto";
+import { UserDto } from "../../core/dtos/user.dto";
 import { Injectable } from "@decorators/di";
 import { Middleware } from "@decorators/express";
 import { plainToClass } from "class-transformer";

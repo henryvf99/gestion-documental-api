@@ -5,7 +5,7 @@ import {
   DELETE_ANIO_USE_CASE,
   UPDATE_ANIO_USE_CASE,
 } from "@container/container";
-import { AnioDto } from "@core/dtos/Anio.dto";
+import { AnioDto } from "../../core/dtos/anio.dto";
 import {
   CreateAnioUseCase,
   DeleteAnioUseCase,

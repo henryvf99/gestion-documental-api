@@ -1,4 +1,4 @@
-import { BoletaDto } from "@core/dtos/boleta.dto";
+import { BoletaDto } from "../../core/dtos/boleta.dto";
 import { Injectable } from "@decorators/di";
 import { Middleware } from "@decorators/express";
 import { plainToClass } from "class-transformer";

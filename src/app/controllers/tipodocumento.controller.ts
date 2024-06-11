@@ -5,7 +5,7 @@ import {
     DELETE_TIPODOCUMENTO_USE_CASE,
     UPDATE_TIPODOCUMENTO_USE_CASE,
   } from "@container/container";
-  import { TipodocumentoDto } from "@core/dtos/Tipodocumento.dto";
+  import { TipodocumentoDto } from "../../core/dtos/tipodocumento.dto";
   import {
     CreateTipodocumentoUseCase,
     DeleteTipodocumentoUseCase,

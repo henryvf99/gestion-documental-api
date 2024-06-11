@@ -1,4 +1,4 @@
-import { AreaDto } from "@core/dtos/area.dto";
+import { AreaDto } from "../../core/dtos/area.dto";
 import { Injectable } from "@decorators/di";
 import { Middleware } from "@decorators/express";
 import { plainToClass } from "class-transformer";

@@ -6,7 +6,7 @@ import {
     UPDATE_TRABAJADOR_USE_CASE,
     GET_TRABAJADOR_TIPOTRABAJADOR_USE_CASE
   } from "@container/container";
-  import { TrabajadorDto } from "@core/dtos/trabajador.dto";
+  import { TrabajadorDto } from "../../core/dtos/trabajador.dto";
   import {
     CreateTrabajadorUseCase,
     DeleteTrabajadorUseCase,

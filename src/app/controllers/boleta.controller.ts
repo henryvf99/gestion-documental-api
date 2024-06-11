@@ -7,7 +7,7 @@ import {
     GET_BOLETA_ANIO_MES_USE_CASE,
     GET_BOLETA_TIPOTRABAJADOR_USE_CASE
   } from "@container/container";
-  import { BoletaDto } from "@core/dtos/Boleta.dto";
+  import { BoletaDto } from "../../core/dtos/boleta.dto";
   import {
     CreateBoletaUseCase,
     DeleteBoletaUseCase,

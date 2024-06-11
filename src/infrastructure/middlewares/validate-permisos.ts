@@ -1,4 +1,4 @@
-import { PermisosDto } from "@core/dtos/permisos.dto";
+import { PermisosDto } from "../../core/dtos/permisos.dto";
 import { Injectable } from "@decorators/di";
 import { Middleware } from "@decorators/express";
 import { plainToClass } from "class-transformer";

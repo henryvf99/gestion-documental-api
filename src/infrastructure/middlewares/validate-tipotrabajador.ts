@@ -1,4 +1,4 @@
-import { TipotrabajadorDto } from "@core/dtos/tipotrabajador.dto";
+import { TipotrabajadorDto } from "../../core/dtos/tipotrabajador.dto";
 import { Injectable } from "@decorators/di";
 import { Middleware } from "@decorators/express";
 import { plainToClass } from "class-transformer";

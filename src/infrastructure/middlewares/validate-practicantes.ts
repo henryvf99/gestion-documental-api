@@ -1,4 +1,4 @@
-import { PracticantesDto } from "@core/dtos/practicantes.dto";
+import { PracticantesDto } from "../../core/dtos/practicantes.dto";
 import { Injectable } from "@decorators/di";
 import { Middleware } from "@decorators/express";
 import { plainToClass } from "class-transformer";

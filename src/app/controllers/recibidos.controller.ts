@@ -7,7 +7,7 @@ import {
     GET_RECIBIDOS_ANIO_MES_USE_CASE,
     GET_RECIBIDOS_TIPODOCUMENTO_USE_CASE
   } from "@container/container";
-  import { RecibidosDto } from "@core/dtos/Recibidos.dto";
+  import { RecibidosDto } from "../../core/dtos/recibidos.dto";
   import {
     CreateRecibidosUseCase,
     DeleteRecibidosUseCase,

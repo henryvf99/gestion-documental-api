@@ -5,7 +5,7 @@ import {
     DELETE_MES_USE_CASE,
     UPDATE_MES_USE_CASE,
   } from "@container/container";
-  import { MesDto } from "@core/dtos/Mes.dto";
+  import { MesDto } from "../../core/dtos/mes.dto";
   import {
     CreateMesUseCase,
     DeleteMesUseCase,

@@ -5,7 +5,7 @@ import {
     DELETE_PERMISOS_USE_CASE,
     UPDATE_PERMISOS_USE_CASE,
   } from "@container/container";
-  import { PermisosDto } from "@core/dtos/Permisos.dto";
+  import { PermisosDto } from "../../core/dtos/permisos.dto";
   import {
     CreatePermisosUseCase,
     DeletePermisosUseCase,
