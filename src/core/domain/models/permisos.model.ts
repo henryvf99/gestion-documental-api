@@ -6,38 +6,33 @@ const { Schema } = mongoose;
 
 interface PermisoAttrs {
   nombre: string;
-  
   gtrabajador: boolean;
   ptrabajador: boolean;
   utrabajador: boolean;
   dtrabajador: boolean;
-
   gpracticante: boolean;
   ppracticante: boolean;
   upracticante: boolean;
   dpracticante: boolean;
-
   gboleta: boolean;
   pboleta: boolean;
   uboleta: boolean;
   dboleta: boolean;
-
   gplanilla: boolean;
   pplanilla: boolean;
   uplanilla: boolean;
   dplanilla: boolean;
-
   semitidos: boolean;
   gemitidos: boolean;
   pemitidos: boolean;
   uemitidos: boolean;
   demitidos: boolean;
-  
   srecibidos: boolean;
   grecibidos: boolean;
   precibidos: boolean;
   urecibidos: boolean;
   drecibidos: boolean;
+  sotros: boolean;
   status: boolean;
 }
 
@@ -75,6 +70,9 @@ export interface PermisoDoc extends mongoose.Document {
   precibidos: boolean;
   urecibidos: boolean;
   drecibidos: boolean;
+
+  sotros: boolean;
+
   status: boolean;
 }
 
@@ -189,6 +187,10 @@ const permisoSchema = new Schema(
       default: false
     },
     drecibidos: {
+      type: Boolean,
+      default: false
+    },
+    sotros: {
       type: Boolean,
       default: false
     },
